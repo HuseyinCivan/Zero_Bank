@@ -23,7 +23,7 @@ Feature: Account Activity
       | Loan        |
       | Credit Card |
       | Brokerage   |
-@1
+
   Scenario:Transaction table
     Then transaction table have following column names
       | Date        |

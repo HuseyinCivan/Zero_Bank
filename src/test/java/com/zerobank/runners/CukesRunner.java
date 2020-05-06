@@ -9,9 +9,8 @@ import org.junit.runner.RunWith;
 @CucumberOptions(
         glue = "com/zerobank/stepdefinitions",
         features = "src/test/resources/features",
-        dryRun = false,
-        strict = true,
-       // tags = "",
+        dryRun = true,
+        tags = "@AccountActivityNavigation",
         plugin ={
                 "html:target/default-report",
                 "json:target/cucumber1.json",
@@ -21,4 +20,5 @@ import org.junit.runner.RunWith;
 )
 
 public class CukesRunner {
+
 }

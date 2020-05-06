@@ -1,8 +1,10 @@
 package com.zerobank.pages;
 
 import com.zerobank.utilities.BrowserUtils;
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.ui.ExpectedConditions;
 
 import java.util.List;
 
@@ -26,6 +28,8 @@ public class Account_Summary_Page extends BasePage{
         BrowserUtils.waitForPageToLoad(15);
         return BrowserUtils.getTextFromWebElements(credit_accounts_columns);
     }
+
+
 
 
 }
