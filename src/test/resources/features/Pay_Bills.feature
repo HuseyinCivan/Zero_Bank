@@ -22,6 +22,21 @@ Feature: Pay Bills
     Then user should verify "The payment was successfully submitted." message is displayed
 
 
+@1234
+  Scenario Outline: get validation message
+    And user enters "<amount>" as amount
+    And user select "<date>" as date
+    And user click the pay button
+    Then user should verify "Please fill out this field." pop up message is displayed where amount is "<amount>" date is "<date>"
+    Examples:
+      | amount | date       |
+      |        | 2020-05-07 |
+      | 9.99   |            |
+      |        |            |
+
+
+
+
   Scenario: amount field
     And user enters "abc$" as amount
     And user select today's date

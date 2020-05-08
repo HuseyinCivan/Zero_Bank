@@ -51,6 +51,19 @@ public class Pay_Bills_steps {
 
     }
 
+    @Then("user should verify {string} pop up message is displayed where amount is {string} date is {string}")
+    public void user_should_verify_pop_up_message_is_displayed_where_amount_is_date_is(String expected, String amount_value, String date_value) {
+       String actual;
+        if (amount_value.equals("")) {
+            actual=pay_bills_page.get_validation_message("amount");
+        }else{
+            actual= pay_bills_page.get_validation_message("date");
+        }
+        Assert.assertEquals(expected,actual);
+    }
+
+
+
     @Then("user should verify date field is empty")
     public void user_should_verify_date_field_is_empty() {
         Assert.assertTrue(pay_bills_page.get_date_field().getText().isEmpty());

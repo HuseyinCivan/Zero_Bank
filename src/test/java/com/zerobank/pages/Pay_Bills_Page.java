@@ -95,4 +95,10 @@ public class Pay_Bills_Page extends BasePage {
     }
 
 
+    public String get_validation_message(String where_to_get_message){
+        String id_path ="sp_"+where_to_get_message;
+        return driver.findElement(By.id(id_path)).getAttribute("validationMessage");
+    }
+
+
 }
