@@ -7,12 +7,15 @@ Feature: Pay Bills
     And user clicks on signin button to access login page
     And user enters valid username and password on loginpage
     And user navigates to "Pay Bills" page
+    And user clicks on the "Pay Saved Payee" tab
+
 
 
   Scenario:Pay Bills page title
     Then user should verify that "Zero - Pay Bills" is displayed as title
 
   Scenario: successful pay operation
+
     And user select a random payee
     And user select a random account
     And user enters "90.99" as amount
@@ -22,8 +25,9 @@ Feature: Pay Bills
     Then user should verify "The payment was successfully submitted." message is displayed
 
 
-@1234
+
   Scenario Outline: get validation message
+
     And user enters "<amount>" as amount
     And user select "<date>" as date
     And user click the pay button
@@ -38,6 +42,7 @@ Feature: Pay Bills
 
 
   Scenario: amount field
+
     And user enters "abc$" as amount
     And user select today's date
     And user click the pay button
@@ -45,6 +50,7 @@ Feature: Pay Bills
 
 
   Scenario: date field
+
     And user enters "90.99" as amount
     And user select "abcd" as date
     Then user should verify date field is empty
